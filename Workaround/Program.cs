@@ -9,14 +9,32 @@ namespace Workaround
             //Degiskenler();
 
             Vatandas vatandas1 = new Vatandas();
-            vatandas1.Ad = "Asım";
-            vatandas1.Soyad = "Mutlu";
-            vatandas1.DogumYili = 1985;
-            vatandas1.TcNo = 12345678910;
+            //vatandas1.Ad = "Asım";
+            //vatandas1.Soyad = "Mutlu";
+            //vatandas1.DogumYili = 1985;
+            //vatandas1.TcNo = 12345678910;
+
+
+            SelamVer(isim: "Ahmet");
+            SelamVer();
+
+
+            int sonuc = Topla(5, 2);
 
             Console.ReadLine();
         }
 
+        //default parametre
+        static void SelamVer(string isim="isimsiz")
+        {
+            Console.WriteLine("Merhaba " + isim);
+        }
+        static int Topla(int sayi1=5 ,int sayi2=10)
+        {
+            int sonuc = sayi1 + sayi2;
+            Console.WriteLine("Toplam : " + sonuc);
+            return sonuc;
+        }
         private static void Degiskenler()
         {
             string mesaj = "Selam";
