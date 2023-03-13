@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Concrete;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 
 namespace Workaround
@@ -67,6 +69,21 @@ namespace Workaround
             {
                 Console.WriteLine(sehir);
             }
+
+            Console.WriteLine("----------------------------------");
+
+            Person person1 = new Person();
+            person1.FirstName = "ASIM";
+            person1.LastName = "MUTLU";
+            person1.DateOfBirthYear = 2001;
+            person1.NationalIdentity = 123; //dogru kimlik numarasi yazildiginda true donecektir ve maske verilecek.
+            
+            Person person2 = new Person();
+            person2.FirstName = "Engin";
+
+            PttManager pttManager = new PttManager(new PersonManager());
+            pttManager.GiveMask(person1);
+
 
             Console.ReadLine();
         }

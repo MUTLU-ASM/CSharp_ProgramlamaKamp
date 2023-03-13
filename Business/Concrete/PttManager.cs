@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class PttManager
+    public class PttManager:ISupplierService
     {
         private IApplicantService _applicantService;
         
@@ -20,6 +20,10 @@ namespace Business.Concrete
             if (_applicantService.CheckPerson(person))
             {
                 Console.WriteLine(person.FirstName + " için maske verildi.");
+            }
+            else
+            {
+                Console.WriteLine(person.FirstName + " için maske verilemedi");
             }
         }
     }
